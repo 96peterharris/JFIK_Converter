@@ -1,5 +1,6 @@
 package com.pioterDeveloper;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.regex.Matcher;
@@ -15,10 +16,10 @@ public class ContentFinder {
 
     public void findCircles(String workContent) {
         String tmp;
-        for(Matcher circleMatcher = Pattern.compile("newpath.*arc").matcher(workContent); circleMatcher.find(); this.allCircles = this.allCircles + "\n" + tmp) {
+
+        for(Matcher circleMatcher = Pattern.compile("([0-9]+[\\s]){5}arc").matcher(workContent); circleMatcher.find(); this.allCircles = this.allCircles + "\n" + tmp) {
             tmp = circleMatcher.group();
         }
-
     }
 
     public void findLines(String workContent) {
@@ -29,13 +30,17 @@ public class ContentFinder {
 
     }
 
+
     public void findCirclesData(String workContent) {
         this.findCircles(workContent);
-        Matcher circleData = Pattern.compile("[a-z]+([\\s][0-9]+){3}").matcher(this.allCircles);
+
+
+        Matcher circleData = Pattern.compile("([0-9]+[\\s]){2}[0-9]+").matcher(this.allCircles);
 
         while(circleData.find()) {
             Circle temp = new Circle();
-            String data = circleData.group().replaceAll("newpath ", "");
+            //String data = circleData.group().replaceAll("newpath ", "");
+            String data = circleData.group();
             String[] splitedData = data.split("\\s");
             temp.setStartX(Float.parseFloat(splitedData[0]));
             temp.setStartY(Float.parseFloat(splitedData[1]));

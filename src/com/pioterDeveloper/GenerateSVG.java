@@ -14,9 +14,9 @@ public class GenerateSVG {
         this.circles = "";
         this.fileBeg = "<?xml version=\"1.0\" standalone=\"no\"?>\n" +
                 "<svg\n" +
-                " viewBox=\"0 0 306 306\" \n" +
-                " width=\"320\" \n" +
-                " height=\"320\"\n" +
+                " viewBox=\"-50 -50 200 200\" \n" +
+                " width=\"600\" \n" +
+                " height=\"600\"\n" +
                 " xmlns=\"http://www.w3.org/2000/svg\" \n" +
                 " xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
         this.fileEnd = "</svg>";
