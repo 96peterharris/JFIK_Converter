@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            ctx.moveTo(155.0,56.0);
+            ctx.lineTo(275.0,264.0);
+            ctx.stroke();
+
+            ctx.moveTo(155.0,56.0);
+            ctx.lineTo(35.0,264.0);
+            ctx.stroke();
+
+            ctx.moveTo(275.0,264.0);
+            ctx.lineTo(35.0,264.0);
+            ctx.stroke();
+
+
+            ctx.beginPath();
+            ctx.arc(155.0,56.0,9.0,0,2*Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.font = "10px Georgia";
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.fillText("1",155.0,56.0);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(275.0,264.0,9.0,0,2*Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.font = "10px Georgia";
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.fillText("2",275.0,264.0);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(35.0,264.0,9.0,0,2*Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
+            ctx.font = "10px Georgia";
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.fillText("3",35.0,264.0);
+            ctx.stroke();
+
+        </script>
+</body>
+</html>

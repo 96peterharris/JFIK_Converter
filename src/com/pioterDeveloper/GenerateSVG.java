@@ -14,8 +14,8 @@ public class GenerateSVG {
         this.circles = "";
         this.fileBeg = "<?xml version=\"1.0\" standalone=\"no\"?>\n" +
                 "<svg\n" +
-                " viewBox=\"-50 -50 200 200\" \n" +
-                " width=\"600\" \n" +
+                " viewBox=\"-10 -10 100 150\" \n" +
+                " width=\"800\" \n" +
                 " height=\"600\"\n" +
                 " xmlns=\"http://www.w3.org/2000/svg\" \n" +
                 " xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
@@ -35,7 +35,7 @@ public class GenerateSVG {
                 tmp = (Line) e;
                 String tmpStr;
 
-                tmpStr = "<path id=\"krawedz_" + i + "\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" d=\"M " + tmp.getStartX() + " " + tmp.getStartY() + " L " + tmp.getEndX() + " " + tmp.getEndY() + " Z \"/>\n";
+                tmpStr = "<path id=\"krawedz_" + i + "\" fill=\"none\" stroke=\"#000000\" stroke-width=\"2\" d=\"M " + tmp.getStartX() + " " + tmp.getStartY() + " L " + tmp.getEndX() + " " + tmp.getEndY() + " Z \"/>\n";
                 lines += tmpStr;
 
                 i++;
