@@ -52,12 +52,7 @@ public class ContentFinder {
         while(lineData.find()) {
             Line temp = new Line();
             String data = lineData.group().replaceAll(" moveto", "");
-            System.out.println(data);
             String[] splitedData = data.split("\\s");
-            System.out.println(splitedData[0]);
-            System.out.println(splitedData[1]);
-            System.out.println(splitedData[2]);
-            System.out.println(splitedData[3]);
             temp.setStartX(Float.parseFloat(splitedData[0]));
             temp.setStartY(Float.parseFloat(splitedData[1]));
             temp.setEndX(Float.parseFloat(splitedData[2]));
@@ -80,6 +75,9 @@ public class ContentFinder {
             e.showShape();
             System.out.println();
         }
+    }
 
+    public ArrayList<Shape> getShapeBase() {
+        return shapeBase;
     }
 }

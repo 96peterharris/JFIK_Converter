@@ -12,5 +12,7 @@ public class Main {
         ContentFinder finder = new ContentFinder();
         finder.findShapes(workString);
         finder.printShapeBase();
+        GenerateSVG svgGenerator = new GenerateSVG();
+        svgGenerator.convert(finder.getShapeBase(),"test.svg");
     }
 }
