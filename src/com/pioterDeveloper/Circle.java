@@ -2,6 +2,8 @@ package com.pioterDeveloper;
 
 public class Circle extends Shape {
     protected float radius;
+    protected String fontType; //added
+    protected String fontSize; // added
 
     public Circle(String nameOfShape, float startX, float startY, float radius) {
         super("Circle", startX, startY);

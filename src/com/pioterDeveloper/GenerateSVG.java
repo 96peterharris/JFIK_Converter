@@ -3,18 +3,20 @@ package com.pioterDeveloper;
 import java.util.ArrayList;
 
 public class GenerateSVG {
-    String lines;
-    String circles;
-    String fileBeg;
-    String fileEnd;
-    String fullFile;
+    protected String lines;
+    protected String circles;
+    protected String fileBeg;
+    protected String fileEnd;
+    protected String fullFile;
+    protected int numberOfLines = 0;
+    protected int numberOfCircles = 0;
 
     GenerateSVG(){
         this.lines = "";
         this.circles = "";
         this.fileBeg = "<?xml version=\"1.0\" standalone=\"no\"?>\n" +
                 "<svg\n" +
-                " viewBox=\"-10 -10 100 150\" \n" +
+                " viewBox=\"0 0 300 280\" \n" +
                 " width=\"800\" \n" +
                 " height=\"600\"\n" +
                 " xmlns=\"http://www.w3.org/2000/svg\" \n" +
@@ -29,13 +31,15 @@ public class GenerateSVG {
         int i = 1;
         int j = 1;
 
+        countShapes(shapeContener);
+
         for(Shape e : shapeContener){
 
             if(e instanceof Line){
                 tmp = (Line) e;
                 String tmpStr;
 
-                tmpStr = "<path id=\"krawedz_" + i + "\" fill=\"none\" stroke=\"#000000\" stroke-width=\"2\" d=\"M " + tmp.getStartX() + " " + tmp.getStartY() + " L " + tmp.getEndX() + " " + tmp.getEndY() + " Z \"/>\n";
+                tmpStr = "<path id=\"krawedz_" + i + "\" fill=\"none\" stroke=\"#000000\" stroke-width=\"1\" d=\"M " + tmp.getStartX() + " " + tmp.getStartY() + " L " + tmp.getEndX() + " " + tmp.getEndY() + " Z \"/>\n";
                 lines += tmpStr;
 
                 i++;
@@ -44,10 +48,16 @@ public class GenerateSVG {
                 tmpC = (Circle) e;
                 String tmpStr;
 
-                tmpStr = "<circle id=\"circle" + j + "\" cx=\"" + tmpC.getStartX() + "\" cy=\"" + tmpC.getStartY() + "\" r=\"" + (tmpC.getRadius() + 6) + "\" style=\"stroke:black; fill:white; stroke-width:1\"/>\n";
+                tmpStr = "<circle id=\"circle" + j + "\" cx=\"" + tmpC.getStartX() + "\" cy=\"" + tmpC.getStartY() + "\" r=\"" + tmpC.getRadius() + "\" style=\"stroke:black; fill:white; stroke-width:1\"/>\n";
+                circles += tmpStr;
+                tmpStr = "<text x=\"" + tmpC.getStartX() + "\" y=\"" + (tmpC.getStartY()+2) + "\"  style=\"text-anchor: middle; font-size: 5px;\">" + j + "</text>\n";
+                circles += tmpStr;
+
+
+               /* tmpStr = "<circle id=\"circle" + j + "\" cx=\"" + tmpC.getStartX() + "\" cy=\"" + tmpC.getStartY() + "\" r=\"" + (tmpC.getRadius() + 6) + "\" style=\"stroke:black; fill:white; stroke-width:1\"/>\n";
                 circles += tmpStr;
                 tmpStr = "<text x=\"" + (tmpC.getStartX() - 5) + "\" y=\"" + (tmpC.getStartY() + 5) + "\">" + j + "</text>\n";
-                circles += tmpStr;
+                circles += tmpStr;*/
 
                 j++;
             }
@@ -66,5 +76,16 @@ public class GenerateSVG {
     public void convert(ArrayList<Shape> shapeContener, String fileName){
         allContent(shapeContener);
         SaveToFile.write(fileName, this.fullFile);
+    }
+
+    private void countShapes(ArrayList<Shape> shapeContener){
+        for(Shape e : shapeContener){
+            if(e instanceof Circle){
+                numberOfCircles++;
+            }
+            if(e instanceof Line){
+                numberOfLines++;
+            }
+        }
     }
 }

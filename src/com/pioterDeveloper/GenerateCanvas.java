@@ -21,10 +21,11 @@ public class GenerateCanvas {
                 "    <title>Document</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "    <canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #d3d3d3;\"></canvas>\n" +
+                "    <canvas id=\"myCanvas\" width=\"2000\" height=\"2000\"></canvas>\n" +
                 "        <script>\n" +
                 "            var c = document.getElementById(\"myCanvas\");\n" +
-                "            var ctx = c.getContext(\"2d\");\n\n";
+                "            var ctx = c.getContext(\"2d\");\n" +
+                "            ctx.scale(4, 4); \n\n";
         this.fileEnd = "\n        </script>\n" +
                 "</body>\n" +
                 "</html>";
@@ -55,13 +56,13 @@ public class GenerateCanvas {
                 String tmpStr;
 
                 tmpStr = "\n            ctx.beginPath();\n" +
-                        "            ctx.arc(" + tmpC.getStartX() + "," + tmpC.getStartY() + "," + (tmpC.getRadius() + 5) + ",0,2*Math.PI);\n" +
+                        "            ctx.arc(" + tmpC.getStartX() + "," + tmpC.getStartY() + "," + tmpC.getRadius() + ",0,2*Math.PI);\n" +
                         "            ctx.fillStyle = \"white\";\n" +
                         "            ctx.fill();\n" +
-                        "            ctx.font = \"10px Georgia\";\n" +
+                        "            ctx.font = \"3px Arial\";\n" +
                         "            ctx.fillStyle = \"black\";\n" +
                         "            ctx.textAlign = \"center\";\n" +
-                        "            ctx.fillText(\"" + j + "\"," + tmpC.getStartX() + "," + (tmpC.getStartY() + 2) + ");\n" +
+                        "            ctx.fillText(\"" + j + "\"," + tmpC.getStartX() + "," + (tmpC.getStartY() + 1) + ");\n" +
                         "            ctx.stroke();\n";
                 circles += tmpStr;
 

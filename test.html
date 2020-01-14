@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas>
+    <canvas id="myCanvas" width="2000" height="2000"></canvas>
         <script>
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
+            ctx.scale(4, 4); 
 
             ctx.moveTo(155.0,56.0);
             ctx.lineTo(275.0,264.0);
@@ -26,33 +27,33 @@
 
 
             ctx.beginPath();
-            ctx.arc(155.0,56.0,9.0,0,2*Math.PI);
+            ctx.arc(155.0,56.0,4.0,0,2*Math.PI);
             ctx.fillStyle = "white";
             ctx.fill();
-            ctx.font = "10px Georgia";
+            ctx.font = "3px Arial";
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
-            ctx.fillText("1",155.0,56.0);
+            ctx.fillText("1",155.0,57.0);
             ctx.stroke();
 
             ctx.beginPath();
-            ctx.arc(275.0,264.0,9.0,0,2*Math.PI);
+            ctx.arc(275.0,264.0,4.0,0,2*Math.PI);
             ctx.fillStyle = "white";
             ctx.fill();
-            ctx.font = "10px Georgia";
+            ctx.font = "3px Arial";
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
-            ctx.fillText("2",275.0,264.0);
+            ctx.fillText("2",275.0,265.0);
             ctx.stroke();
 
             ctx.beginPath();
-            ctx.arc(35.0,264.0,9.0,0,2*Math.PI);
+            ctx.arc(35.0,264.0,4.0,0,2*Math.PI);
             ctx.fillStyle = "white";
             ctx.fill();
-            ctx.font = "10px Georgia";
+            ctx.font = "3px Arial";
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
-            ctx.fillText("3",35.0,264.0);
+            ctx.fillText("3",35.0,265.0);
             ctx.stroke();
 
         </script>

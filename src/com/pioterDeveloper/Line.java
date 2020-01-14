@@ -3,11 +3,14 @@ package com.pioterDeveloper;
 public class Line extends Shape{
     protected float endX;
     protected float endY;
+    protected String edgeColor; // added
+
 
     public Line(String nameOfShape, float startX, float startY, float endX, float endY) {
         super("Line", startX, startY);
         this.endY = endY;
         this.endY = endY;
+        //this.edgeColor = edgeColor;
     }
 
     Line(){ this.nameOfShape = "Line"; }
