@@ -5,13 +5,4 @@
  height="600"
  xmlns="http://www.w3.org/2000/svg" 
  xmlns:xlink="http://www.w3.org/1999/xlink">
-<path id="krawedz_1" fill="none" stroke="#ccb300" stroke-width="1" d="M 155.0 56.0 L 275.0 264.0 Z "/>
-<path id="krawedz_2" fill="none" stroke="#338000" stroke-width="1" d="M 155.0 56.0 L 35.0 264.0 Z "/>
-<path id="krawedz_3" fill="none" stroke="#338000" stroke-width="1" d="M 275.0 264.0 L 35.0 264.0 Z "/>
-<circle id="circle1" cx="155.0" cy="56.0" r="4.0" style="stroke:black; fill:#00ff00; stroke-width:1"/>
-<text x="155.0" y="57.0"  style="text-anchor: middle; font-size: 4.0px;">1</text>
-<circle id="circle2" cx="275.0" cy="264.0" r="4.0" style="stroke:black; fill:#00ff00; stroke-width:1"/>
-<text x="275.0" y="265.0"  style="text-anchor: middle; font-size: 4.0px;">2</text>
-<circle id="circle3" cx="35.0" cy="264.0" r="4.0" style="stroke:black; fill:#00ff00; stroke-width:1"/>
-<text x="35.0" y="265.0"  style="text-anchor: middle; font-size: 4.0px;">3</text>
 </svg>
