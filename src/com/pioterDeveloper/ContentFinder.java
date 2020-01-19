@@ -166,7 +166,7 @@ public class ContentFinder {
         }
     }
 
-    public void findShapes(String workContent) {
+    public ContentFinder findShapes(String workContent) {
         this.findLineWidth(workContent);
         this.findBlocksOfLines(workContent);
         this.findBlocksOfCircles(workContent);
@@ -178,6 +178,7 @@ public class ContentFinder {
         for(String e : this.blockOfCircles){
             this.findCirclesData(e);
         }
+        return this;
     }
 
     public void printShapeBase() {
