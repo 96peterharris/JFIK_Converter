@@ -62,7 +62,7 @@ public class GenerateSVG {
     public void allContent(ArrayList<Shape> shapeContener){
         shapesToString(shapeContener);
         fullFile = fileBeg + lines + circles + fileEnd;
-        System.out.println(fullFile);
+       // System.out.println(fullFile);
     }
 
     public void convert(ArrayList<Shape> shapeContener, String fileName){
