@@ -73,8 +73,8 @@ public class GenerateCanvas {
                 j++;
             }
         }
-        System.out.println(lines);
-        System.out.println(circles);
+       // System.out.println(lines);
+       // System.out.println(circles);
 
     }
 
