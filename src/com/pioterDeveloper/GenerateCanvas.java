@@ -44,7 +44,10 @@ public class GenerateCanvas {
                 tmp = (Line) e;
                 String tmpStr;
 
-                tmpStr = "            ctx.moveTo(" + tmp.getStartX()  + "," + tmp.getStartY() + ");\n" +
+                tmpStr = "            ctx.beginPath();\n" +
+                        "            ctx.strokeStyle = \"#"+ tmp.getColorHex() +"\";\n" +
+                        "            ctx.lineWidth = \""+ tmp.getLineWidth() +"\";\n" +
+                        "            ctx.moveTo(" + tmp.getStartX()  + "," + tmp.getStartY() + ");\n" +
                         "            ctx.lineTo(" + tmp.getEndX() + "," + tmp.getEndY() + ");\n" +
                         "            ctx.stroke();\n\n";
                 lines += tmpStr;
@@ -57,12 +60,13 @@ public class GenerateCanvas {
 
                 tmpStr = "\n            ctx.beginPath();\n" +
                         "            ctx.arc(" + tmpC.getStartX() + "," + tmpC.getStartY() + "," + tmpC.getRadius() + ",0,2*Math.PI);\n" +
-                        "            ctx.fillStyle = \"white\";\n" +
+                        "            ctx.fillStyle = \"#"+ tmpC.getColorHex() +"\";\n" +
                         "            ctx.fill();\n" +
                         "            ctx.font = \"3px Arial\";\n" +
                         "            ctx.fillStyle = \"black\";\n" +
                         "            ctx.textAlign = \"center\";\n" +
                         "            ctx.fillText(\"" + j + "\"," + tmpC.getStartX() + "," + (tmpC.getStartY() + 1) + ");\n" +
+                        "            ctx.strokeStyle = \"black\";\n" +
                         "            ctx.stroke();\n";
                 circles += tmpStr;
 

@@ -39,7 +39,7 @@ public class GenerateSVG {
                 tmp = (Line) e;
                 String tmpStr;
 
-                tmpStr = "<path id=\"krawedz_" + i + "\" fill=\"none\" stroke=\"#000000\" stroke-width=\"1\" d=\"M " + tmp.getStartX() + " " + tmp.getStartY() + " L " + tmp.getEndX() + " " + tmp.getEndY() + " Z \"/>\n";
+                tmpStr = "<path id=\"krawedz_" + i + "\" fill=\"none\" stroke=\"#" + tmp.getColorHex() + "\" stroke-width=\"" + tmp.getLineWidth() + "\" d=\"M " + tmp.getStartX() + " " + tmp.getStartY() + " L " + tmp.getEndX() + " " + tmp.getEndY() + " Z \"/>\n";
                 lines += tmpStr;
 
                 i++;
@@ -48,22 +48,14 @@ public class GenerateSVG {
                 tmpC = (Circle) e;
                 String tmpStr;
 
-                tmpStr = "<circle id=\"circle" + j + "\" cx=\"" + tmpC.getStartX() + "\" cy=\"" + tmpC.getStartY() + "\" r=\"" + tmpC.getRadius() + "\" style=\"stroke:black; fill:white; stroke-width:1\"/>\n";
+                tmpStr = "<circle id=\"circle" + j + "\" cx=\"" + tmpC.getStartX() + "\" cy=\"" + tmpC.getStartY() + "\" r=\"" + tmpC.getRadius() + "\" style=\"stroke:black; fill:#" + tmpC.getColorHex() + "; stroke-width:" + tmpC.getLineWidth() + "\"/>\n";
                 circles += tmpStr;
-                tmpStr = "<text x=\"" + tmpC.getStartX() + "\" y=\"" + (tmpC.getStartY()+2) + "\"  style=\"text-anchor: middle; font-size: 5px;\">" + j + "</text>\n";
+                tmpStr = "<text x=\"" + tmpC.getStartX() + "\" y=\"" + (tmpC.getStartY()+1) + "\"  style=\"text-anchor: middle; font-size: " + tmpC.getRadius() +"px;\">" + j + "</text>\n";
                 circles += tmpStr;
-
-
-               /* tmpStr = "<circle id=\"circle" + j + "\" cx=\"" + tmpC.getStartX() + "\" cy=\"" + tmpC.getStartY() + "\" r=\"" + (tmpC.getRadius() + 6) + "\" style=\"stroke:black; fill:white; stroke-width:1\"/>\n";
-                circles += tmpStr;
-                tmpStr = "<text x=\"" + (tmpC.getStartX() - 5) + "\" y=\"" + (tmpC.getStartY() + 5) + "\">" + j + "</text>\n";
-                circles += tmpStr;*/
 
                 j++;
             }
         }
-       //System.out.println(lines);
-       //System.out.println(circles);
 
     }
 
